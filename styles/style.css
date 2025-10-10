@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 :root {
   --headerfont: 2.5rem;
   --h2fontweight: 600;
@@ -36,8 +41,7 @@ header {
 }
 
 .logo {
-  color: rgb(0, 0, 61);
-  font-weight: 700;
+  width: 30px;
 }
 
 .logo span {
@@ -72,8 +76,35 @@ header {
   gap: 50px;
 }
 
-.ctabar i {
-  font-size: 1.4rem;
+.menu-btn {
+  width: 35px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.bar {
+  height: 4px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animation when active */
+.menu-btn.active .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.menu-btn.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
 }
 
 .topnav button {
@@ -90,30 +121,21 @@ header {
   background-color: rgb(127, 127, 255);
 }
 
-/* Experiment for the hamburger menu */
-body {
-  height: 100vh;
-  overflow: hidden;
-}
-
 header {
   box-shadow: none;
-}
-
-main {
-  position: relative;
 }
 
 .hamburger-menu {
   background-color: rgb(240, 248, 255, 0.65);
   backdrop-filter: blur(10px);
   width: 100%;
-  height: 100vh;
-  position: absolute;
+  height: 100dvh;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
   padding: 6rem 1.5rem 5.5rem;
+  display: none;
 }
 
 .hamburger-menu > ul {
@@ -136,7 +158,7 @@ main {
   font-weight: 500;
 }
 
-.language>span {
+.language > span {
   font-weight: 700;
 }
 
@@ -144,6 +166,7 @@ main {
   display: flex;
   font-size: 19px;
   gap: 0.7rem;
+  color: black;
 }
 /* Experiment for the hamburger menu */
 
