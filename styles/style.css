@@ -16,7 +16,7 @@ a {
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
   overflow-x: hidden;
   margin: 0;
@@ -64,10 +64,9 @@ header {
   text-decoration: none;
 }
 
-.navbar a:focus {
-  font-weight: 500;
-  border-bottom: 2px solid rgb(183, 183, 255);
-  padding-bottom: 5px;
+a::active {
+  background: none;
+  color: aliceblue;
 }
 
 .ctabar {
@@ -129,7 +128,7 @@ header {
   background-color: rgb(240, 248, 255, 0.65);
   backdrop-filter: blur(10px);
   width: 100%;
-  height: 100dvh;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -288,7 +287,7 @@ header {
 }
 
 .sponsorcontainer span::before {
-  content: "";
+  content: '';
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -299,7 +298,7 @@ header {
 }
 
 .sponsorcontainer span::after {
-  content: "";
+  content: '';
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -425,7 +424,7 @@ header {
 }
 
 .abouttext h2::before {
-  content: "";
+  content: '';
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -436,7 +435,7 @@ header {
 }
 
 .abouttext h2::after {
-  content: "";
+  content: '';
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -520,7 +519,7 @@ header {
 }
 
 .valuetag span::before {
-  content: "";
+  content: '';
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -531,7 +530,7 @@ header {
 }
 
 .valuetag span::after {
-  content: "";
+  content: '';
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -773,23 +772,73 @@ header {
   gap: 4rem;
 }
 
-.signupvideo {
+/* -------- Video Styling -------- */
+.video-section {
+  position: relative;
   width: 100%;
+  border-radius: 15px;
   height: 250px;
-  border-radius: 1rem;
-  background-image: url("../images/pexels-ketut-subiyanto-4247735.jpg");
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
 }
 
-.signupvideo img {
-  display: block;
-  margin-inline: auto;
-  position: relative;
-  width: 4rem;
-  top: 50%;
-  transform: translateY(-50%);
+.video-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+/* Custom play button */
+.play-btn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  width: 80px;
+  opacity: 0.8;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+
+.play-btn img:hover {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox video {
+  width: 100%;
+  height:auto;
+  border-radius: 10px;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+/*-------- Video Styling --------*/
 
 .form {
   width: 100%;
@@ -931,7 +980,7 @@ footer {
     margin-bottom: 40px;
   }
 
-  .signupvideo {
+  .video-section {
     height: 350px;
   }
 }
@@ -958,7 +1007,7 @@ footer {
     display: flex;
   }
 
-  .ctabar i {
+  .menu-btn {
     display: none;
   }
 
@@ -971,13 +1020,18 @@ footer {
     justify-content: space-between;
   }
 
-  .signupvideo {
+  .video-section {
     width: 50%;
     height: 450px;
   }
 
-  .signupvideo img {
+  .video-section img {
     width: 6rem;
+  }
+
+  .lightbox video {
+    width: auto;
+    height: 90vh;
   }
 
   .form {

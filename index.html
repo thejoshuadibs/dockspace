@@ -11,11 +11,12 @@
   <body>
     <header>
       <nav class="topnav">
-        <img src="images/logo.png" class="logo" />
+        <a href="#"> <img src="images/logo.png" class="logo" /> </a>
         <ul class="navbar">
           <li><a href="#">home</a></li>
           <li><a href="#about">about</a></li>
           <li><a href="#services">services</a></li>
+          <li><a href="#products">products</a></li>
           <li><a href="#contact">contact</a></li>
         </ul>
         <div class="ctabar">
@@ -33,10 +34,11 @@
       <!-- Feature for hamburger dropdown -->
       <div class="hamburger-menu">
         <ul>
-          <li>home</li>
-          <li>about</li>
-          <li>services</li>
-          <li>contact</li>
+          <li class="close-hamburger"><a href="#">home</a></li>
+          <li class="close-hamburger"><a href="#about">about</a></li>
+          <li class="close-hamburger"><a href="#services">services</a></li>
+          <li class="close-hamburger"><a href="#products">products</a></li>
+          <li class="close-hamburger"><a href="#contact">contact</a></li>
         </ul>
         <div class="hamburger-links">
           <div class="language"><span>EN</span> &nbsp;NG</div>
@@ -163,7 +165,7 @@
         </div>
       </section>
 
-      <section class="product">
+      <section class="product" id="products">
         <div class="productcontainer">
           <div class="producttag">
             <h2>Our Products</h2>
@@ -306,7 +308,7 @@
         </div>
       </section>
 
-      <section class="signup">
+      <section class="signup" id="contact">
         <div class="signupcontainer">
           <div class="signuptag">
             <h2>Join With Us</h2>
@@ -315,9 +317,28 @@
             </p>
           </div>
           <div class="signupform">
-            <div class="signupvideo">
-              <img src="images/Group@2x.png" alt="" />
-            </div>
+              <!-- Background video section -->
+              <div class="video-section">
+                <video id="bgVideo" autoplay muted loop playsinline>
+                  <source src="videos/video.mp4" type="video/mp4" />
+                  Your browser does not support HTML5 video.
+                </video>
+
+                <!-- Custom play button -->
+                <div class="play-btn">
+                  <img src="./images/Group@2x.png" alt="" id="openLightbox" />
+                </div>
+              </div>
+
+              <!-- Lightbox -->
+              <div class="lightbox" id="lightbox">
+                <div class="lightbox-content">
+                  <i class="fa-solid fa-xmark close-btn" id="closeLightbox"></i>
+                  <video id="popupVideo" controls autoplay>
+                    <source src="./videos/video.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
             <div class="form">
               <input
                 type="email"
@@ -339,7 +360,7 @@
     </main>
     <footer>
       <div class="bottomnav">
-        <div class="logo"><span>dock</span>Space</div>
+        <a href="#"> <img src="images/logo.png" class="logo" /> </a>
         <ul class="navbar">
           <li><a href="#">home</a></li>
           <li><a href="#about">about</a></li>
