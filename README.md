@@ -2,6 +2,8 @@
 
 **Dockspace** is a modern, single-page website for an interior design company specializing in elegant and functional furniture solutions. The website showcases various pieces and services offered by the company, designed to reflect a professional and stylish brand identity.
 
+Site URI: [https://dockspace.onrender.com]
+
 ---
 
 ## ✨ Features
