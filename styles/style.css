@@ -255,7 +255,6 @@ a::active {
 
 .sponsors {
   width: 100%;
-  margin-bottom: 100px;
   background-color: aliceblue;
 }
 
@@ -380,7 +379,7 @@ a::active {
 
 .about {
   width: 100%;
-  margin-bottom: 50px;
+  padding-top: 120px;
 }
 
 .aboutcontainer {
@@ -391,7 +390,6 @@ a::active {
   justify-content: space-between;
   gap: 23px;
   align-items: center;
-  padding: 50px 0;
 }
 
 .aboutimages {
@@ -429,10 +427,6 @@ a::active {
   position: absolute;
   bottom: -10px;
   left: -10px;
-}
-
-.abouttext p {
-  margin-top: 50px;
 }
 
 .abouttext p span {
@@ -477,7 +471,7 @@ a::active {
 
 .value {
   width: 100%;
-  margin: 150px 0;
+  padding-top: 120px;
 }
 
 .valuecontainer {
@@ -596,7 +590,7 @@ a::active {
 
 .product {
   width: 100%;
-  margin: 150px 0;
+  padding-top: 120px;
 }
 
 .productcontainer {
@@ -686,7 +680,7 @@ a::active {
 
 .testimonials {
   width: 100%;
-  margin-bottom: 70px;
+  padding-top: 100px;
 }
 
 .testimonialscontainer {
@@ -725,7 +719,7 @@ a::active {
 }
 
 .client {
-  margin-top: 1.5rem;
+  padding-top: 120px;
   display: flex;
   gap: 1rem;
 }
@@ -736,11 +730,12 @@ a::active {
 
 .signup {
   width: 100%;
-  margin: 150px 0;
+  padding-top: 120px;
+  margin-bottom: 100px;
 }
 
 .signupcontainer {
-  width: 85%;
+  width: 90%;
   margin-inline: auto;
 }
 
@@ -841,15 +836,21 @@ a::active {
   display: block;
 }
 
-.form input {
+.form input,
+.form textarea {
   width: 100%;
   border: none;
   border-radius: 3px;
-  background-color: aliceblue;
-  height: 3rem;
+  background-color: whitesmoke;
+  height: 4rem;
   margin-bottom: 2rem;
   padding: 0 1rem;
   outline: none;
+}
+
+.form textarea {
+  padding: 1rem;
+  height: 10rem;
 }
 
 .form button {
@@ -869,6 +870,43 @@ button {
 button:active {
   background-color: black;
   color: white;
+}
+
+.title-decor {
+  border: 3px solid rgb(183, 183, 255);
+  padding: 0 5px 5px 5px;
+  position: relative;
+}
+
+.title-decor::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(183, 183, 255);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.title-decor::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(183, 183, 255);
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+}
+
+.sponsorcontainer p,
+.abouttext p,
+.valuetag p,
+.producttag p,
+.testitag p,
+.signuptag p {
+  margin-top: 50px;
 }
 
 footer {
@@ -963,7 +1001,7 @@ footer {
     text-transform: capitalize;
     font-weight: 600;
     line-height: 1.15em;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
   }
 
   .herotext {

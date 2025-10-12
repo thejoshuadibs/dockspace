@@ -82,7 +82,7 @@
 
       <section class="sponsors">
         <div class="sponsorcontainer">
-          <h2>our <span>sponsor</span></h2>
+          <h2>our <span class="title-decor">sponsor</span></h2>
           <div class="brands">
             <div class="brand brand1"><i class="fa-brands fa-uber"></i></div>
             <div class="brand brand2">
@@ -120,7 +120,7 @@
       <section class="value" id="services">
         <div class="valuecontainer">
           <div class="valuetag">
-            <h2>why <span>choose us</span></h2>
+            <h2>why <span class="title-decor">choose us</span></h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Reiciendis unde totam, doloremque mollitia fuga reprehenderit
@@ -168,7 +168,7 @@
       <section class="product" id="products">
         <div class="productcontainer">
           <div class="producttag">
-            <h2>Our Products</h2>
+            <h2>Our <span class="title-decor">Products</span></h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Reiciendis unde totam, doloremque mollitia fuga reprehenderit
@@ -231,7 +231,7 @@
       <section class="testimonials">
         <div class="testimonialscontainer">
           <div class="testitag">
-            <h2>Our Happy Clients</h2>
+            <h2>Our <span class="title-decor">Happy Clients</span></h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Reiciendis unde totam, doloremque mollitia fuga reprehenderit
@@ -311,47 +311,42 @@
       <section class="signup" id="contact">
         <div class="signupcontainer">
           <div class="signuptag">
-            <h2>Join With Us</h2>
+            <h2><span class="title-decor">Say Hello!</span></h2>
             <p>
               Sign up for the newsletter and receive 10% off your first order.
             </p>
           </div>
           <div class="signupform">
-              <!-- Background video section -->
-              <div class="video-section">
-                <video id="bgVideo" autoplay muted loop playsinline>
-                  <source src="./videos/video.mp4" />
-                  Your browser does not support HTML5 video.
+            <!-- Background video section -->
+            <div class="video-section">
+              <video id="bgVideo" autoplay muted loop playsinline>
+                <source src="./videos/video.mp4" />
+                Your browser does not support HTML5 video.
+              </video>
+
+              <!-- Custom play button -->
+              <div class="play-btn">
+                <img src="./images/Group@2x.png" alt="" id="openLightbox" />
+              </div>
+            </div>
+
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox">
+              <div class="lightbox-content">
+                <i class="fa-solid fa-xmark close-btn" id="closeLightbox"></i>
+                <video id="popupVideo" controls autoplay>
+                  <source src="./videos/video.mp4" type="video/mp4" />
                 </video>
-
-                <!-- Custom play button -->
-                <div class="play-btn">
-                  <img src="./images/Group@2x.png" alt="" id="openLightbox" />
-                </div>
               </div>
-
-              <!-- Lightbox -->
-              <div class="lightbox" id="lightbox">
-                <div class="lightbox-content">
-                  <i class="fa-solid fa-xmark close-btn" id="closeLightbox"></i>
-                  <video id="popupVideo" controls autoplay>
-                    <source src="./videos/video.mp4" type="video/mp4" />
-                  </video>
-                </div>
-              </div>
+            </div>
             <div class="form">
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Username"
+                placeholder="Email"
               />
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password"
-              />
+              <textarea placeholder="Your message goes here"></textarea>
               <button>Sign Up</button>
             </div>
           </div>
