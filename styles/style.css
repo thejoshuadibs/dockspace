@@ -122,7 +122,7 @@ a::active {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 3;
   padding: 6rem 1.5rem 5.5rem;
   display: none;
 }
@@ -801,34 +801,6 @@ button:active {
   color: white;
 }
 
-/* .title-decor {
-  display: inline-block;
-  border: 3px solid rgb(183, 183, 255);
-  padding: 0 5px 5px 5px;
-  position: relative;
-  width: fit-content;
-}
-
-.title-decor::before {
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: rgb(183, 183, 255);
-  border-radius: 50%;
-}
-
-.title-decor::before {
-  top: -10px;
-  left: -10px;
-  box-shadow:
-    0 0 0 0 rgb(183, 183, 255),
-    calc(100% + 7.5px) 0 0 0 rgb(183, 183, 255),
-    calc(100% + 7.5px) 0 0 rgb(183, 183, 255),
-    calc(100% + 7.5px),
-    calc(100% + 7.5px) 0 0 rgb(183, 183, 255);
-} */
-
 .title-decor {
   --dot-size: 15px; /* diameter of the circle */
   --dot-radius: calc(var(--dot-size) / 2);
@@ -853,7 +825,7 @@ button:active {
   bottom: calc(-1.35 * var(--dot-radius));
 
   pointer-events: none;
-  z-index: 2;
+  z-index: 1;
   background:
     radial-gradient(
       circle var(--dot-radius) at var(--dot-radius) var(--dot-radius),
