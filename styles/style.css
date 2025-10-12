@@ -271,34 +271,6 @@ a::active {
   text-align: center;
 }
 
-.sponsorcontainer span::before {
-  content: '';
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgb(183, 183, 255);
-  position: absolute;
-  top: -10px;
-  left: -10px;
-}
-
-.sponsorcontainer span::after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgb(183, 183, 255);
-  position: absolute;
-  bottom: -10px;
-  left: -10px;
-}
-
-.sponsorcontainer h2 span {
-  border: 3px solid rgb(183, 183, 255);
-  padding: 0 5px 5px 5px;
-  position: relative;
-}
-
 .brands {
   width: 100%;
   margin: 70px 0;
@@ -401,36 +373,22 @@ a::active {
   font-size: 2em;
   font-weight: 600;
   text-transform: capitalize;
-  border: 3px solid rgb(183, 183, 255);
-  display: inline-block;
   padding: 3px;
   position: relative;
 }
 
-.abouttext h2::before {
-  content: '';
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgb(183, 183, 255);
-  position: absolute;
-  top: -10px;
-  left: -10px;
+.abouttext .copy {
+  display: inline-block;
+  height: 3.5rem;
+  overflow: hidden;
 }
 
-.abouttext h2::after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgb(183, 183, 255);
-  position: absolute;
-  bottom: -10px;
-  left: -10px;
+.abouttext .full-text {
+  height: fit-content;
 }
 
-.abouttext p span {
-  color: rgb(183, 183, 255);
+.abouttext p .more {
+  color: rgb(127, 127, 255);
   cursor: pointer;
 }
 
@@ -489,35 +447,6 @@ a::active {
   font-weight: var(--h2fontweight);
   text-transform: capitalize;
   margin-bottom: 10px;
-}
-
-.valuetag span {
-  border: 3px solid rgb(183, 183, 255);
-  display: inline-block;
-  padding: 3px;
-  position: relative;
-}
-
-.valuetag span::before {
-  content: '';
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgb(183, 183, 255);
-  position: absolute;
-  top: -10px;
-  left: -10px;
-}
-
-.valuetag span::after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgb(183, 183, 255);
-  position: absolute;
-  bottom: -10px;
-  left: -10px;
 }
 
 .valuelibrary {
@@ -872,32 +801,87 @@ button:active {
   color: white;
 }
 
-.title-decor {
+/* .title-decor {
+  display: inline-block;
   border: 3px solid rgb(183, 183, 255);
   padding: 0 5px 5px 5px;
   position: relative;
+  width: fit-content;
 }
 
 .title-decor::before {
   content: '';
+  position: absolute;
   width: 15px;
   height: 15px;
+  background: rgb(183, 183, 255);
   border-radius: 50%;
-  background-color: rgb(183, 183, 255);
-  position: absolute;
-  top: -10px;
-  left: -10px;
 }
 
-.title-decor::after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgb(183, 183, 255);
-  position: absolute;
-  bottom: -10px;
+.title-decor::before {
+  top: -10px;
   left: -10px;
+  box-shadow:
+    0 0 0 0 rgb(183, 183, 255),
+    calc(100% + 7.5px) 0 0 0 rgb(183, 183, 255),
+    calc(100% + 7.5px) 0 0 rgb(183, 183, 255),
+    calc(100% + 7.5px),
+    calc(100% + 7.5px) 0 0 rgb(183, 183, 255);
+} */
+
+.title-decor {
+  --dot-size: 15px; /* diameter of the circle */
+  --dot-radius: calc(var(--dot-size) / 2);
+
+  position: relative;
+  display: inline-block; /* or keep width: fit-content; */
+  padding: 0.35rem 0.5rem;
+  border: 3px solid rgb(183, 183, 255);
+  z-index: 1; /* keep element above the pseudo if needed */
+}
+
+/* create an outer canvas so full circles are visible */
+.title-decor::before {
+  content: '';
+  position: absolute;
+
+  /* expand the pseudo-element outward by the circle radius so
+     the entire circle fits inside the pseudo-element */
+  top: calc(-1.35 * var(--dot-radius));
+  left: calc(-1.35 * var(--dot-radius));
+  right: calc(-1.35 * var(--dot-radius));
+  bottom: calc(-1.35 * var(--dot-radius));
+
+  pointer-events: none;
+  z-index: 2;
+  background:
+    radial-gradient(
+      circle var(--dot-radius) at var(--dot-radius) var(--dot-radius),
+      rgb(183, 183, 255) 99%,
+      transparent 100%
+    ),
+    /* Top left */
+      radial-gradient(
+        circle var(--dot-radius) at calc(100% - var(--dot-radius))
+          var(--dot-radius),
+        rgb(183, 183, 255) 99%,
+        transparent 100%
+      ),
+    /* Top right */
+      radial-gradient(
+        circle var(--dot-radius) at var(--dot-radius)
+          calc(100% - var(--dot-radius)),
+        rgb(183, 183, 255) 99%,
+        transparent 100%
+      ),
+    /*,  Bottom left */
+      radial-gradient(
+        circle var(--dot-radius) at calc(100% - var(--dot-radius))
+          calc(100% - var(--dot-radius)),
+        rgb(183, 183, 255) 99%,
+        transparent 100%
+      ); /* Bottom right */
+  background-repeat: no-repeat;
 }
 
 .sponsorcontainer p,

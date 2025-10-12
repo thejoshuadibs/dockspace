@@ -1,6 +1,8 @@
 const dropDown = document.querySelector('.hamburger-menu');
 const menuBtn = document.querySelector('.menu-btn');
 const hamburgerLinks = document.querySelectorAll('.close-hamburger');
+const expander = document.querySelector('.more');
+const bodyCopy = document.querySelector('.copy');
 
 hamburgerLinks.forEach(element => {
   element.addEventListener('click', () => {
@@ -58,3 +60,7 @@ lightbox.addEventListener('click', e => {
   el.addEventListener('touchstart', () => el.classList.add('hover'));
   el.addEventListener('touchend', () => el.classList.remove('hover'));
 }); */
+
+expander.addEventListener('click', () => {
+  bodyCopy.classList.toggle('full-text');
+});
