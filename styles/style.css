@@ -1009,13 +1009,24 @@ footer {
     color: white;
     outline: none;
   }
+  
+  button:active {
+  background-color: black;
+  color: white;
+  outline: none;
+}
 
   button:hover {
     background-color: #f8f8f8;
     color: black;
     outline: 1px solid black;
     cursor: pointer;
-  }
+  } 
+  
+  button:active {
+  background-color: black;
+  color: white;
+}
 
   .signupform {
     flex-direction: row;

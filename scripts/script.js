@@ -62,5 +62,11 @@ lightbox.addEventListener('click', e => {
 }); */
 
 expander.addEventListener('click', () => {
+  console.log(expander.textContent.toLowerCase());
+  if (expander.textContent.trim().toLowerCase() === 'read more...') {
+    expander.textContent = 'Read less...';
+  } else {
+    expander.textContent = 'Read more...'
+  }
   bodyCopy.classList.toggle('full-text');
 });
