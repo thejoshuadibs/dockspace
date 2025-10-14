@@ -504,7 +504,7 @@ a::active {
 
 .cardbutton button {
   padding: 1em 2em;
-  border: 2px solid rgb(127, 127, 255);
+  border: 1px solid rgb(127, 127, 255);
   color: rgb(0, 0, 255);
   border-radius: 5px;
   background: none;
@@ -1004,29 +1004,24 @@ footer {
     height: 55%;
   }
 
-.cardbutton button:active {
-  background-color: black;
-  border-color: black;
-  color: white;
-}
-  
-  button:active {
-  background-color: black;
-  color: white;
-  outline: none;
-}
+  .cardbutton button:active {
+    background-color: black;
+    border-color: black;
+    color: white;
+  }
 
   button:hover {
     background-color: #f8f8f8;
     color: black;
     outline: 1px solid black;
     cursor: pointer;
-  } 
-  
+  }
+
   button:active {
-  background-color: black;
-  color: white;
-}
+    background-color: black;
+    color: white;
+    outline: none;
+  }
 
   .signupform {
     flex-direction: row;
