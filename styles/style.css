@@ -1004,11 +1004,11 @@ footer {
     height: 55%;
   }
 
-  .cardbutton button:hover {
-    background-color: rgb(127, 127, 255);
-    color: white;
-    outline: none;
-  }
+.cardbutton button:active {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
   
   button:active {
   background-color: black;
